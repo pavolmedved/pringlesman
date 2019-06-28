@@ -1,0 +1,92 @@
+/* Start of Pringles Man Animation */
+@keyframes moveText{
+    0%{
+        position: absolute;
+        top: inherit;
+        left: 10px;
+        color: inherit;
+    }
+
+    25%{
+        position: absolute;
+        top: inherit;
+        left: 250px;
+        color: red;
+    }
+
+    100%{
+        position: absolute;
+        top: inherit;
+        left: 10px;
+        color: inherit;
+    }
+}
+
+@keyframes wink{
+    0%{
+        height: inherit;
+        top: 150px;
+
+    }
+    50%{
+        height: 0px;
+        top: 150 px;
+    }
+    100%{
+        height: inherit;
+        top: 150px;
+    }
+}
+
+/*Animated Text CSS */
+p{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    font-weight: bold;
+    animation-name: moveText;
+    animation-duration: 10s;
+    animation-iteration-count: 2;
+    color: black;
+
+}
+
+.eyes{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 80px;
+    width: 50px;
+    color: black;
+    border-radius: 100%;
+    /*x-offset, y-offset, blur, spread, color */
+    box-shadow: 220px 150px 0 0 black;
+}
+
+.eyes::before{
+    content: "";
+    height: inherit;
+    width: inherit;
+    position: absolute;
+    top: 150px;
+    left: 440px;
+    background-color: black;
+    border-radius: 100%;
+    animation-name:wink;
+    animation-duration: 2s;
+    animation-iteration-count: infinite
+
+}
+
+.eyes::after{
+    content: "";
+    position: absolute;
+    top: 115px;
+    left: 388px;
+    height: 140px;
+    width: 140px;
+    border-radius: 100%;
+    border: 5px solid gold;
+
+}

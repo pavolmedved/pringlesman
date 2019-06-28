@@ -1,0 +1,106 @@
+@import "./eyes.css";
+
+*{
+    box-sizing: border-box;
+}
+
+.position-demo{
+    border: 5px solid black;
+    position: relative;
+    height: 50px;
+}
+
+@keyframes moveLeftStache{
+    0%{
+        transform: rotate(-60deg);
+    }
+
+    50%{
+        transform: rotate(-40deg);
+
+    }
+    100%{ 
+        transform: rotate(-60deg)
+    }
+}
+
+@keyframes moveRightStache{
+    0%{
+        transform: rotate(60deg);
+    }
+    50%{ 
+        transform: rotate(40deg);
+    }
+    100% {transform: rotate(60deg);
+    }
+}
+
+.moustache{
+    height: 180px;
+    width: 180px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    color: black;
+    border-radius: 100%;
+    box-shadow:
+        150px 240px 0 0 black,
+        300px 240px 0 0 black;
+}
+
+.moustache::before{
+    content: "";
+    height: inherit;
+    width: inherit;
+    position: absolute;
+    top: 90px;
+    left: 60px;
+    border-bottom: 150px solid black;
+    border-radius: 0 0 0 100%;
+    transform: rotate(-60deg);
+    transform-origin: right 250px;
+    animation-name: moveLeftStache;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+}
+
+.moustache::after{
+    content: "";
+    height: inherit;
+    width: inherit;
+    position: absolute;
+    top: 90px;
+    left: 390px;
+    border-bottom: 150px solid black;
+    border-radius: 0 0 100% 0;
+    transform: rotate(60deg);
+    transform-origin: left 250px;
+    animation-name: moveRightStache;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+}
+
+/* Grid CSS Example */
+
+.grid div{
+    border: 1px solid rgb(0, 95, 107);
+    border-radius: 3px;
+    background-color: rgba(0, 95, 107, .8);
+    padding: 20px;
+    color: white;
+    font-size: 120%;
+
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows:minmax(200,250);
+    grid-auto-rows: 100px;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    position: absolute;
+    left: 50%;
+}
